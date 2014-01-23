@@ -17,6 +17,13 @@ ZS_MANAGE=/app/zend-server-6-php-5.4/bin/zs-manage
 sed "s/vcap/${ZEND_UID}/" ${PHP_INI_SCAN_DIR}/ZendGlobalDirectives.ini.erb > ${PHP_INI_SCAN_DIR}/ZendGlobalDirectives.ini
 sed "s/VCAP_PORT/${PORT}/" /app/nginx/conf/sites-available/default.erb > /app/nginx/conf/sites-available/default
 
+# Heroku specific
+sed -i "s/vcap/u${ZEND_UID}/" /app/etc/zce.rc
+sed -i "s/vcap/u${ZEND_UID}/" /app/zend-server-6-php-5.4/bin/zsd.sh
+sed -i "s/vcap/u${ZEND_UID}/" /app/zend-server-6-php-5.4/bin/zdd.sh
+sed -i "s/vcap/${ZEND_UID}/" /app/zend-server-6-php-5.4/bin/jqd.sh
+sed -i "s/vcap/${ZEND_UID}/" /app/zend-server-6-php-5.4/bin/scd.sh
+
 # Change document root if needed
 if [[ -n $ZEND_DOCUMENT_ROOT ]]; then
     sed -i -e "s|root[ \t]*/app/www|root /app/www/$ZEND_DOCUMENT_ROOT|" /app/nginx/conf/sites-available/default
