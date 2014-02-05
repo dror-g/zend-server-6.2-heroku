@@ -11,7 +11,7 @@ hostname
 /usr/bin/id
 grep uid /app/zend-server-6-php-5.4/etc/conf.d/ZendGlobalDirectives.ini
 
-daemon.sh &
+/app/www/daemon.sh &
 ###/Debugging info
 
 # Keep the app alive so that the health managager does not kill it
