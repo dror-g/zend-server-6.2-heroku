@@ -159,3 +159,5 @@ if [[ -n $ZEND_CF_DEBUG ]]; then
     echo WEB_API_KEY_HASH=\'$WEB_API_KEY_HASH\'
     echo ZEND_DOCUMENT_ROOT=\'$ZEND_DOCUMENT_ROOT\'
 fi
+
+exec /app/nothing
