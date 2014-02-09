@@ -140,13 +140,15 @@ launch()
 	else
 		exec 3>&1 4>&2	
 	fi
-    $WATCHDOG -i $BINARY -v3 1>&3 2>&4
+    #$WATCHDOG -i $BINARY -v3 1>&3 2>&4
+    $BINARY -v3 1>&3 2>&4
     RET=$?
     if [ $RET -eq 0 ];then
         $ECHO_CMD "$BINARY watchdog is up and running.. ${OK_COLOR}[OK]${T_RESET}"
         return $RET 
     else
-        $WATCHDOG -u $WD_UID -g $WD_GID -s $BINARY 1>&3 2>&4
+        #$WATCHDOG -u $WD_UID -g $WD_GID -s $BINARY 1>&3 2>&4
+        $BINARY 1>&3 2>&4
         report $? "Starting"
     fi
 }
