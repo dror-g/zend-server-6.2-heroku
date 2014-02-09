@@ -13,7 +13,7 @@ else
     exit 1;
 fi
 check_root_privileges
-WEB_USER="u${ZEND_UID}"
+WEB_USER="u`id -u`"
 . ${ZCE_PREFIX}/bin/shell_functions.rc
 WD_INI=${ZCE_PREFIX}/etc/watchdog-deployment.ini
 WATCHDOG="${ZCE_PREFIX}/bin/watchdog -c $WD_INI"

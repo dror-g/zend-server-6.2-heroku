@@ -13,8 +13,8 @@ else
     exit 1;
 fi
 check_root_privileges
-WD_UID="u${ZEND_UID}"
-WD_GID="u${ZEND_UID}"
+WD_UID="u`id -u`"
+WD_GID="u`id -u`"
 . ${ZCE_PREFIX}/bin/shell_functions.rc
 WD_INI=${ZCE_PREFIX}/etc/watchdog-sc.ini
 WATCHDOG="${ZCE_PREFIX}/bin/watchdog -c $WD_INI"
