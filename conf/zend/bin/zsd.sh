@@ -13,7 +13,7 @@ else
     exit 1;
 fi
 check_root_privileges
-WEB_USER=vcap
+WEB_USER="u${ZEND_UID}"
 . ${ZCE_PREFIX}/bin/shell_functions.rc
 WD_INI=${ZCE_PREFIX}/etc/watchdog-zsd.ini
 WATCHDOG="${ZCE_PREFIX}/bin/watchdog -c $WD_INI"
