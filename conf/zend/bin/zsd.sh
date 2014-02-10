@@ -17,8 +17,7 @@ WEB_USER="u`id -u`"
 . ${ZCE_PREFIX}/bin/shell_functions.rc
 WD_INI=${ZCE_PREFIX}/etc/watchdog-zsd.ini
 WATCHDOG="${ZCE_PREFIX}/bin/watchdog -c $WD_INI"
-#BINARY=zsd
-BINARY="/app/zend-server-6-php-5.4/bin/zsd /app/zend-server-6-php-5.4/etc/zsd.ini -e"
+BINARY=zsd
 
 
 start()

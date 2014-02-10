@@ -18,8 +18,7 @@ WD_GID="u`id -u`"
 . ${ZCE_PREFIX}/bin/shell_functions.rc
 WD_INI=${ZCE_PREFIX}/etc/watchdog-jq.ini
 WATCHDOG="${ZCE_PREFIX}/bin/watchdog -c $WD_INI"
-#BINARY=jqd
-BINARY="/app/zend-server-6-php-5.4/bin/jqd -f /app/zend-server-6-php-5.4/etc/jqd.ini -e"
+BINARY=jqd
 
 
 start()
