@@ -56,6 +56,7 @@ echo "Starting Zend Server"
 # Fix GID/UID until ZSRV-11165 is resolved
 sed -e "s|^\(zend.httpd_uid[ \t]*=[ \t]*\).*$|\1$ZEND_UID|" -i /app/zend-server-6-php-5.4/etc/conf.d/ZendGlobalDirectives.ini
 sed -e "s|^\(zend.httpd_gid[ \t]*=[ \t]*\).*$|\1$ZEND_GID|" -i /app/zend-server-6-php-5.4/etc/conf.d/ZendGlobalDirectives.ini
+exec /app/nothing
 /app/zend-server-6-php-5.4/bin/zendctl.sh start
 
 # Bootstrap Zend Server
